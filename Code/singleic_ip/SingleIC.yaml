@@ -1,0 +1,19 @@
+global_settings:
+  model_dir: "singleic_ip"
+  output_dir: "singleic_op"
+  do_simulations: True
+  do_post_processing: False
+  modeltype: 'heaviside'
+
+jobs:
+  - name: "SingleIC"
+    model_definition: "cordicalArea.txt"
+    model_initial_conditions: "rand_ICS.txt"
+    simulation_time: 5
+    num_cells: 1
+    do_parallel: True
+
+post_processing:
+  Dropouts:
+    - dropout: False
+      nCells: 1000
