@@ -3,7 +3,7 @@ from sklearn.manifold import TSNE
 import matplotlib
 import matplotlib.pyplot as plt
 
-def vis(df, p):
+def vis(df, p, directory):
     '''
     
     Transforms the sampled expression data into a pdf that shows the movement of cells.
@@ -21,12 +21,15 @@ def vis(df, p):
     '''
     tsne = TSNE(n_components=2,perplexity=p).fit_transform(df.T.values)
     tdf = pd.DataFrame(tsne, columns=['t-SNE 1', 't-SNE 2'],index=df.columns)
-    tdf.to_csv('/home/ay/Documents/SINGLE/MPL_singleic_op/ExpData/tsne.csv')
+    tdf.to_csv(directory + '/MPL_singleic_op/ExpData/tsne.csv')
     fig, ax = plt.subplots(1,1,figsize=(5,5))
     ax.scatter(tsne[:,0], tsne[:,1], c = [float(col.split('_')[1]) for col in df.columns])
     ax.axis('off')
     plt.tight_layout()
-    plt.savefig('/home/ay/Documents/SINGLE/MPL_singleic_op/CellAttractor.pdf')
+    plt.savefig(directory + '/MPL_singleic_op/CellAttractor.pdf')    
+    
+the_directory='/home/ay/Documents/Synthetic-RNA-maps/Code'
+    
+df=pd.read_csv(the_directory + '/MPL_singleic_op/ExpData/sampled_ExpData.csv', index_col=0)
 
-df=pd.read_csv('/home/ay/Documents/SINGLE/MPL_singleic_op/ExpData/sampled_ExpData.csv', index_col=0)
-vis(df, 10)
+vis(df, 5, the_directory)

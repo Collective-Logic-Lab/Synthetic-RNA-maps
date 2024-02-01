@@ -12,7 +12,7 @@ Comment
 run_ID=0
 
 # Sets some of the directories going to be used.
-the_directory=/home/ay/Documents/SINGLE
+the_directory=/home/ay/Documents/Synthetic-RNA-maps/Code
 bool_directory=/home/ay/Downloads/BoolODE-master
 output_directory=$the_directory/MPL_singleic_op
 
@@ -43,8 +43,6 @@ cp $output_directory/ic$run_ID/SingleIC/ExpressionData.csv $output_directory/Exp
 ((run_ID++))
 done
 
-cd $the_directory
 python3 exp-data_sampler.py
 
-cd $bool_directory
 python3 visualize.py

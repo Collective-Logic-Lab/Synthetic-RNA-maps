@@ -9,7 +9,9 @@ import pandas as pd
 import glob
 import random as rm
 
-Exp_data = glob.glob("/home/ay/Documents/SINGLE/MPL_singleic_op/ExpData/ExpressionData*.csv")
+the_directory='/home/ay/Documents/Synthetic-RNA-maps/Code'
+
+Exp_data = glob.glob(the_directory + "/MPL_singleic_op/ExpData/ExpressionData*.csv")
 Exp_data.sort()
 
 df2 = pd.DataFrame()
@@ -21,4 +23,4 @@ for file in Exp_data:
 	df2 = pd.concat([df2, df[random_column]], axis=1)
 	df_rand = df2.copy()
 
-df_rand.to_csv("/home/ay/Documents/SINGLE/MPL_singleic_op/ExpData/sampled_ExpData.csv")
+df_rand.to_csv(the_directory + "/MPL_singleic_op/ExpData/sampled_ExpData.csv")
