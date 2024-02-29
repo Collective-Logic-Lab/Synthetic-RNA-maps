@@ -16,7 +16,7 @@ def plot_expressions(filename):
 	'''
 	df=pd.read_csv(filename, index_col=0).transpose()
 	df.plot()
-	plt.savefig("figure.pdf")	
+	plt.savefig("figure.png")	
 if __name__== "__main__":
     if len(sys.argv) == 2:
         plot_expressions(sys.argv[1])

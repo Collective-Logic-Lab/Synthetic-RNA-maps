@@ -9,7 +9,7 @@ jobs:
   - name: "SingleIC"
     model_definition: "cordicalArea.txt"
     model_initial_conditions: "rand_ICS.txt"
-    simulation_time: 5
+    simulation_time: 10
     num_cells: 1
     do_parallel: True
 
