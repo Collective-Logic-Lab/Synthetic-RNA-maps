@@ -12,7 +12,7 @@ Comment
 run_ID=0
 
 # Initialize number of simulations.
-sim_time=$1
+num_simulations=$1
 
 # Check if an argument is provided
 if [ "$#" -eq 0 ]; then
@@ -27,7 +27,7 @@ output_directory=$the_directory/MPL_singleic_op
 # Clears the files in the output directory
 rm -r $output_directory/*
 mkdir -p $output_directory/ExpData
-while [ $run_ID -lt $sim_time ]
+while [ $run_ID -lt $num_simulations ]
 do
 echo $run_ID
 cd $the_directory/singleic_ip

@@ -32,4 +32,4 @@ the_directory='/home/alaguda/Synthetic-RNA-maps/Code'
     
 df=pd.read_csv(the_directory + '/MPL_singleic_op/ExpData/sampled_ExpData.csv', index_col=0)
 
-vis(df, 5, the_directory)
+vis(df, 50, the_directory)

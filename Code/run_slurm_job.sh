@@ -16,6 +16,6 @@ module load mamba/latest
 source activate scicomp
 
 #Initialize number of simulations
-sim_time=$1
+num_simulations=$1
 
-./runRandomIC.sh $sim_time
+./runRandomIC.sh $num_simulations
