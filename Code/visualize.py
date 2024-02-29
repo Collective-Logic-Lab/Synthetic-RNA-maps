@@ -26,9 +26,9 @@ def vis(df, p, directory):
     ax.scatter(tsne[:,0], tsne[:,1], c = [float(col.split('_')[1]) for col in df.columns])
     ax.axis('off')
     plt.tight_layout()
-    plt.savefig(directory + '/MPL_singleic_op/CellAttractor.pdf')    
+    plt.savefig(directory + '/MPL_singleic_op/CellAttractor.png')    
     
-the_directory='/home/ay/Documents/Synthetic-RNA-maps/Code'
+the_directory='/home/alaguda/Synthetic-RNA-maps/Code'
     
 df=pd.read_csv(the_directory + '/MPL_singleic_op/ExpData/sampled_ExpData.csv', index_col=0)
 

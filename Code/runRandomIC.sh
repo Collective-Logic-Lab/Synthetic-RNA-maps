@@ -11,15 +11,23 @@ Comment
 # Initialize the run_ID variable.
 run_ID=0
 
+# Initialize number of simulations.
+sim_time=$1
+
+# Check if an argument is provided
+if [ "$#" -eq 0 ]; then
+       	number=20
+fi
+
 # Sets some of the directories going to be used.
-the_directory=/home/ay/Documents/Synthetic-RNA-maps/Code
-bool_directory=/home/ay/Downloads/BoolODE-master
+the_directory=/home/alaguda/Synthetic-RNA-maps/Code
+bool_directory=/home/alaguda/BoolODE
 output_directory=$the_directory/MPL_singleic_op
 
 # Clears the files in the output directory
 rm -r $output_directory/*
 mkdir -p $output_directory/ExpData
-while [ $run_ID -lt 100 ]
+while [ $run_ID -lt $sim_time ]
 do
 echo $run_ID
 cd $the_directory/singleic_ip
@@ -36,7 +44,7 @@ mv $the_directory/singleic_op/* $output_directory/ic$run_ID
 
 python3 make_plot.py $output_directory/ic$run_ID/SingleIC/ExpressionData.csv
 
-mv $the_directory/figure.pdf $output_directory/ic$run_ID/figure$run_ID.pdf
+mv $the_directory/figure.png $output_directory/ic$run_ID/figure$run_ID.png
 
 cp $output_directory/ic$run_ID/SingleIC/ExpressionData.csv $output_directory/ExpData/ExpressionData$run_ID.csv
 
