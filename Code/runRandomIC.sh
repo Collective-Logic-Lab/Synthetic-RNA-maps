@@ -14,9 +14,16 @@ run_ID=0
 # Initialize number of simulations.
 num_simulations=$1
 
+# Name of gene_network for the output
+gene_network=$2
+
 # Check if an argument is provided
-if [ "$#" -eq 0 ]; then
-       	number=20
+if [ -z  "$1" ]; then
+       	num_simulations=20
+fi
+
+if [ -z  "$2" ]; then
+	gene_network='Name-not-provided'
 fi
 
 # Sets some of the directories going to be used.
@@ -54,3 +61,5 @@ done
 python3 exp-data_sampler.py
 
 python3 visualize.py
+
+cp -rf  MPL_singleic_op output_${num_simulations}cells_${gene_network}

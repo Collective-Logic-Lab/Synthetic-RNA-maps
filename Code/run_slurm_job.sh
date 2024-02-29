@@ -18,4 +18,7 @@ source activate scicomp
 #Initialize number of simulations
 num_simulations=$1
 
-./runRandomIC.sh $num_simulations
+# Name of gene_network for the output
+gene_network=$2
+
+./runRandomIC.sh $num_simulations $gene_network
