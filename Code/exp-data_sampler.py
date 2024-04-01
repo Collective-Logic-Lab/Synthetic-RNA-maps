@@ -20,6 +20,9 @@ df_rand = pd.DataFrame()
 df2_nxt = pd.DataFrame()
 df_rand_nxt = pd.DataFrame()
 
+df2_last = pd.DataFrame()
+df_last = pd.DataFrame()
+
 for file in Exp_data:
     df = pd.read_csv(file, index_col=0)
         
@@ -27,6 +30,8 @@ for file in Exp_data:
     rc_index = df.columns.get_loc(random_column)
                         
     random_column_nxt = df.columns[rc_index + 1]
+
+    last_column = rm.choice(df.columns[900:-1])
                                 
     df2 = pd.concat([df2, df[random_column]], axis=1)
     df_rand = df2.copy()
@@ -34,5 +39,9 @@ for file in Exp_data:
     df2_nxt = pd.concat([df2_nxt, df[random_column_nxt]], axis=1)
     df_rand_nxt = df2_nxt.copy()
 
+    df2_last = pd.concat([df2_last, df[last_column]], axis=1)
+    df_last = df2_last.copy()
+
 df_rand.to_csv(the_directory + "/MPL_singleic_op/ExpData/sampled_ExpData.csv")
 df_rand_nxt.to_csv(the_directory + "/MPL_singleic_op/ExpData/(t+1)_sampled_ExpData.csv")
+df_last.to_csv(the_directory + "/MPL_singleic_op/ExpData/(>900)_sampled_ExpData.csv")
