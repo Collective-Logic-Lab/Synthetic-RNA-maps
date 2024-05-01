@@ -8,10 +8,11 @@ This Python code selects a random column from each cell's expression data and ge
 import pandas as pd
 import glob
 import random as rm
+import sys
 
-the_directory='/home/alaguda/Synthetic-RNA-maps/Code'
+output_directory = sys.argv[1]
 
-Exp_data = glob.glob(the_directory + "/MPL_singleic_op/ExpData/ExpressionData*.csv")
+Exp_data = glob.glob(output_directory + "/ExpData/ExpressionData*.csv")
 Exp_data.sort()
 
 df2 = pd.DataFrame()
@@ -42,6 +43,6 @@ for file in Exp_data:
     df2_last = pd.concat([df2_last, df[last_column]], axis=1)
     df_last = df2_last.copy()
 
-df_rand.to_csv(the_directory + "/MPL_singleic_op/ExpData/sampled_ExpData.csv")
-df_rand_nxt.to_csv(the_directory + "/MPL_singleic_op/ExpData/(t+1)_sampled_ExpData.csv")
-df_last.to_csv(the_directory + "/MPL_singleic_op/ExpData/(>900)_sampled_ExpData.csv")
+df_rand.to_csv(output_directory + "/ExpData/sampled_ExpData.csv")
+df_rand_nxt.to_csv(output_directory + "/ExpData/(t+1)_sampled_ExpData.csv")
+df_last.to_csv(output_directory + "/ExpData/(>900)_sampled_ExpData.csv")

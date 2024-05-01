@@ -1,7 +1,7 @@
 import pandas as pd
 import matplotlib.pyplot as plt
 import sys
-def plot_expressions(filename):
+def plot_expressions(filename,destination):
 	'''
 	Transforms gene expression data of a cell over time into a line graph pdf.
 	
@@ -16,9 +16,9 @@ def plot_expressions(filename):
 	'''
 	df=pd.read_csv(filename, index_col=0).transpose()
 	df.plot()
-	plt.savefig("figure.png")	
+	plt.savefig(destination)	
 if __name__== "__main__":
-    if len(sys.argv) == 2:
-        plot_expressions(sys.argv[1])
+    if len(sys.argv) == 3:
+        plot_expressions(sys.argv[1],sys.argv[2])
     else:
-        print("ERROR: The desired usage is python make_plot.py input_file !!!")
+        print("ERROR: The desired usage is python make_plot.py input_file output_file !!!")

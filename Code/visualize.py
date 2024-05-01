@@ -3,6 +3,7 @@ from sklearn.manifold import TSNE
 import matplotlib
 import matplotlib.pyplot as plt
 import numpy as np
+import sys
 
 def vis(df, df_2, p, directory):
     '''
@@ -27,7 +28,7 @@ def vis(df, df_2, p, directory):
     tdf_nxt = pd.DataFrame(tsne_nxt, columns=['t-SNE 1', 't-SNE 2'],index=df_2.columns)
 
 
-    tdf.to_csv(directory + '/MPL_singleic_op/ExpData/tsne.csv')
+    tdf.to_csv(directory + '/ExpData/tsne.csv')
     fig, ax = plt.subplots(1,1,figsize=(5,5))
     ax.scatter(tsne[:,0], tsne[:,1], c = [float(col.split('_')[1]) for col in df.columns])
 
@@ -36,9 +37,9 @@ def vis(df, df_2, p, directory):
 
     ax.axis('off')
     plt.tight_layout()
-    plt.savefig(directory + '/MPL_singleic_op/CellAttractor.png')
+    plt.savefig(directory + '/CellAttractor.png')
 
-def my_vis(df, df_2, p, directory):
+def my_vis(df, df_2, directory):
     '''
 
     This is Ayomide's way of visualizing the sampled data using averages.
@@ -62,7 +63,7 @@ def my_vis(df, df_2, p, directory):
         avg_2.append(column_avg_2)
 
     tdf = pd.DataFrame({'x1':avg_1,'x2':avg_2}, index=df.columns)
-    tdf.to_csv(directory + '/MPL_singleic_op/ExpData/my_projection.csv')
+    tdf.to_csv(directory + '/ExpData/my_projection.csv')
 
     for column in df_2.columns:
         column_avg_1 = df_2[column].iloc[:2].mean()
@@ -79,19 +80,18 @@ def my_vis(df, df_2, p, directory):
     ax.scatter(avg_1, avg_2, c = [float(col.split('_')[1]) for col in df.columns])
 
     for i in range(len(avg_1)):
-        plt.arrow(x=avg_1[i], y=avg_2[i], dx=(nxt_avg_1[i] - avg_1[i]), dy=(nxt_avg_2[i] - avg_2[i]), width=.02)
+        plt.arrow(x=avg_1[i], y=avg_2[i], dx=(nxt_avg_1[i] - avg_1[i]), dy=(nxt_avg_2[i] - avg_2[i]), alpha=0.5, width=.005)
     
     plt.tight_layout()
-    plt.savefig(directory + '/MPL_singleic_op/MY_CellAttractor.png')
+    plt.savefig(directory + '/MY_CellAttractor.png')
 
-
-the_directory='/home/alaguda/Synthetic-RNA-maps/Code'
+output_directory = sys.argv[1]
     
-df=pd.read_csv(the_directory + '/MPL_singleic_op/ExpData/sampled_ExpData.csv', index_col=0)
+df=pd.read_csv(output_directory + '/ExpData/sampled_ExpData.csv', index_col=0)
 
-df_2=pd.read_csv(the_directory + '/MPL_singleic_op/ExpData/(t+1)_sampled_ExpData.csv', index_col=0)
+df_2=pd.read_csv(output_directory + '/ExpData/(t+1)_sampled_ExpData.csv', index_col=0)
 
-df_last=pd.read_csv(the_directory + '/MPL_singleic_op/ExpData/(>900)_sampled_ExpData.csv', index_col=0)
+df_last=pd.read_csv(output_directory + '/ExpData/(>900)_sampled_ExpData.csv', index_col=0)
 
-vis(df, df_2, 50, the_directory)
-my_vis(df, df_2, 50, the_directory)
+vis(df, df_2, 32, output_directory)
+my_vis(df, df_2, output_directory)

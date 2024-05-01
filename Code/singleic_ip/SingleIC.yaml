@@ -1,6 +1,6 @@
 global_settings:
-  model_dir: "singleic_ip"
-  output_dir: "singleic_op"
+  model_dir: "single_ip"
+  output_dir: "single_op"
   do_simulations: True
   do_post_processing: False
   modeltype: 'hill'
