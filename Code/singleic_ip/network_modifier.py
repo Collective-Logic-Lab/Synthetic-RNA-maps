@@ -58,7 +58,7 @@ def network_modifier(input_file):
 
                     words = gene.split()
 
-                    extra_gene = words[0] + '\t' + '( ' words[0] + ' )'
+                    extra_gene = words[0] + '\t' + '( ' + words[0] + ' )'
                     f.write(extra_gene + '\n')
 
         else:
@@ -84,7 +84,7 @@ def network_modifier(input_file):
           
                     words = gene.split()
   
-                    extra_gene = words[0] + '\t' + '( ' words[0] + ' )'
+                    extra_gene = words[0] + '\t' + '( ' + words[0] + ' )'
                     f.write(extra_gene + '\n')
 
     return 'allowed_file.txt'
