@@ -2,7 +2,7 @@
 
 #SBATCH -N 1            # number of nodes
 #SBATCH -c 1            # number of cores 
-#SBATCH -t 1-00:00:00   # time in d-hh:mm:ss
+#SBATCH -t 07-00:00:00   # time in d-hh:mm:ss
 #SBATCH -p general      # partition 
 #SBATCH -q public       # QOS
 #SBATCH -o slurm.%j.out # file to save job's STDOUT (%j = JobId)
@@ -18,4 +18,9 @@ source activate scicomp
 #Initialize number of simulations
 num_simulations=$1
 
-./runRandomIC.sh $num_simulations
+# Name of test for the output
+test_name=$2
+
+gene_network=$3
+
+./runRandomIC.sh $num_simulations $test_name $gene_network
