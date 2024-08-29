@@ -18,11 +18,12 @@ def generate_randomicfile(filename):
     
     To do: Check what BoolODE does in all zeros and all ones cases.
     """
+
     df = pd.read_csv(filename, sep='\t')
-    
+
     Gene_names = list(df.Gene)
     n = len(Gene_names)
-    x = random.randint(0,(2^n)-1)
+    x = random.randint(0,(2**n)-1)
     
     s = label_to_state(x,n)
     
