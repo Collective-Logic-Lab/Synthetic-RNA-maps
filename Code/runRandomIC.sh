@@ -36,8 +36,8 @@ if [ -z "$3" ]; then
 fi
 
 # Sets some of the directories going to be used.
-the_directory=/home/alaguda/Synthetic-RNA-maps/Code
-bool_directory=/home/alaguda/BoolODE
+the_directory=/home/avpetrov/Synthetic-RNA-Maps/Code
+bool_directory=/home/avpetrov/BoolODE
 
 # Create output directory based on the number of simulations and test name
 mkdir -p $the_directory/output_${num_simulations}cells_${test_name}
