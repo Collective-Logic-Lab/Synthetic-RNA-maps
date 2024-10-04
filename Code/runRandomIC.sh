@@ -87,7 +87,8 @@ while [ $run_ID -lt $num_simulations ]
 do
 echo $run_ID
 # Generate random input
-python3 generate_randominput.py $gene_network
+# python3 generate_randominput.py $gene_network
+python3 $singleInputDirectory/generate_randominput.py $gene_network
 
 mkdir -p $output_directory/ic$run_ID
 
