@@ -94,6 +94,9 @@ mkdir -p $output_directory/ic$run_ID
 # Copy random initial conditions to output directory
 cp $singleInputDirectory/rand_ICS.txt $output_directory/ic$run_ID
 
+ ((run_ID++))
+done
+
 # Run BoolODE simulations
 python3 $bool_directory/boolode.py --config $singleInputDirectory/SingleIC.yaml
 
