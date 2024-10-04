@@ -88,12 +88,15 @@ do
 echo $run_ID
 # Generate random input
 # python3 generate_randominput.py $gene_network
-python3 $singleInputDirectory/generate_randominput.py $gene_network
+python3 ./single_ip/generate_randominput.py $gene_network
 
 mkdir -p $output_directory/ic$run_ID
 
 # Copy random initial conditions to output directory
 cp $singleInputDirectory/rand_ICS.txt $output_directory/ic$run_ID
+
+ ((run_ID++))
+done
 
 # Run BoolODE simulations
 python3 $bool_directory/boolode.py --config $singleInputDirectory/SingleIC.yaml
