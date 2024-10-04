@@ -88,7 +88,7 @@ do
 echo $run_ID
 # Generate random input
 # python3 generate_randominput.py $gene_network
-python3 ./single_ip/generate_randominput.py $gene_network
+python3 ./singleic_ip/generate_randominput.py $gene_network
 
 mkdir -p $output_directory/ic$run_ID
 
