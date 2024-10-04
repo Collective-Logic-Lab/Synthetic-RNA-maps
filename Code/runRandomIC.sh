@@ -1,10 +1,14 @@
 #!/bin/bash
 
+#set -e
+
 <<Comment
 
 This shell scipt is the brain of all the operations.
 
 It starts from the input gene network file and ends at the visualization of the movement of the cells.
+
+
 
 Comment
 
@@ -47,8 +51,11 @@ output_directory=$the_directory/output_${num_simulations}cells_${test_name}
 rm -r $output_directory/*
 mkdir -p $output_directory/ExpData
 
+
+
 # Create directories for single input and output
-cp -r $the_directory/singleic_ip $the_directory/singleic_ip_${num_simulations}cells_${test_name}
+mkdir -p $the_directory/singleic_ip_${num_simulations}cells_${test_name}
+cp -r $the_directory/singleic_ip/* $the_directory/singleic_ip_${num_simulations}cells_${test_name}
 mkdir -p $the_directory/singleic_op_${num_simulations}cells_${test_name}
 
 singleInputDirectory=$the_directory/singleic_ip_${num_simulations}cells_${test_name}
@@ -86,6 +93,9 @@ EOF
 while [ $run_ID -lt $num_simulations ]
 do
 echo $run_ID
+
+cd $singleInputDirectory
+
 # Generate random input
 python3 generate_randominput.py $gene_network
 
@@ -93,9 +103,6 @@ mkdir -p $output_directory/ic$run_ID
 
 # Copy random initial conditions to output directory
 cp $singleInputDirectory/rand_ICS.txt $output_directory/ic$run_ID
-
- ((run_ID++))
-done
 
 # Run BoolODE simulations
 python3 $bool_directory/boolode.py --config $singleInputDirectory/SingleIC.yaml
