@@ -1,6 +1,9 @@
-Gene	Rule
-g1	not ( g4 or g3 )
-g2	( ( ( g1 ) and not ( g3 ) ) and not ( g5 ) ) and not ( g4 ) 
-g3	( g3 and g4 ) and not ( g2 )
-g4	( g3 ) and not ( g2 )
-g5	( ( g4 ) and not ( g1 ) ) and not ( g2 )
+Gene    Rule
+g1      ( g3 AND g4 ) OR ( g2 AND NOT ( g5 ) )
+g2      NOT ( g3 OR g1 ) AND ( g6 AND NOT ( g7 ) )
+g3      ( g1 OR g2 ) AND NOT ( g8 )
+g4      ( g5 ) AND ( g1 AND NOT ( g3 ) )
+g5      ( g4 OR g2 ) AND ( NOT ( g6 ) OR g1 )
+g6      ( g5 AND g7 ) OR ( g3 AND NOT ( g8 ) )
+g7      NOT ( g2 ) AND ( g6 OR g1 )
+g8      ( g4 OR g6 ) AND ( NOT ( g7 ) OR g2 )
