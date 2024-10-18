@@ -1,0 +1,2 @@
+Genes	Values
+['STAT3', 'Pax5', 'BCR', 'Irf4', 'IL-2R', 'Bcl6', 'STAT6', 'CD40', 'IL-21R', 'AID', 'IL-4']	[1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]
