@@ -1,2 +1,0 @@
-Genes	Values
-['en', 'CI_protein', 'wg', 'ci', 'CIA', 'EN_protein']	[1, 1, 1, 1, 1, 1]

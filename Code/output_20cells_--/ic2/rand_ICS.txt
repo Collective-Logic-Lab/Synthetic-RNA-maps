@@ -1,2 +1,2 @@
 Genes	Values
-['en', 'CI_protein', 'wg', 'ci', 'CIA', 'EN_protein']	[1, 1, 1, 1, 1, 1]
+['g2', 'g5', 'g6', 'g7', 'g8']	[1, 1, 1, 1, 1]
