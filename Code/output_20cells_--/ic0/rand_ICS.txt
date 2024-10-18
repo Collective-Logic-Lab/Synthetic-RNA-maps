@@ -1,2 +1,2 @@
 Genes	Values
-['NF-kB', 'STAT3', 'Bach2', 'Blimp1', 'BCR', 'Bcl6', 'STAT6', 'CD40', 'STAT5', 'IL-21R', 'IL-4R', 'IL-2', 'CD40L', 'Ag', 'IL-21']	[1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]
+['NF-kB', 'XBP1', 'Bach2', 'Pax5', 'IL-2R', 'ERK', 'STAT5', 'IL-21R']	[1, 1, 1, 1, 1, 1, 1, 1]

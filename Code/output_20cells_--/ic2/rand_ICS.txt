@@ -1,2 +1,0 @@
-Genes	Values
-['NF-kB', 'STAT3', 'Blimp1', 'Bcl6', 'IL-21R', 'IL-4R', 'CD40L', 'IL-4']	[1, 1, 1, 1, 1, 1, 1, 1]
