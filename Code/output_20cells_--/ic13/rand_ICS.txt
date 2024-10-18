@@ -1,2 +1,0 @@
-Genes	Values
-['g4', 'g5']	[1, 1]

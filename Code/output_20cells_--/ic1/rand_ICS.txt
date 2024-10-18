@@ -1,2 +1,2 @@
 Genes	Values
-['g1', 'g2', 'g3', 'g4', 'g7', 'g8']	[1, 1, 1, 1, 1, 1]
+['STAT3', 'XBP1', 'Bach2', 'Pax5', 'Blimp1', 'BCR', 'CD40', 'STAT5', 'AID']	[1, 1, 1, 1, 1, 1, 1, 1, 1]
