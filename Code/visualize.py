@@ -37,6 +37,10 @@ def vis(df, df_2, p, directory):
     fig, ax = plt.subplots(1,1,figsize=(5,5))
     ax.scatter(tsne[:,0], tsne[:,1], c = [float(col.split('_')[1]) for col in df.columns])
 
+
+    # 
+    ax.set_xlabel("x axis")
+    ax.set_ylabel("y axis")
     # Save the plot as a PNG file
     ax.axis('on')
     plt.tight_layout()
