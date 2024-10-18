@@ -39,9 +39,6 @@ if [ -z "$3" ]; then
 	gene_network='cordicalArea.txt'
 fi
 
-#Testing Body Segmentation
-gene_network = 'B_Cell_Differentiation/expressions.txt'
-
 # Sets some of the directories going to be used.
 the_directory=/home/avpetrov/Synthetic-RNA-Maps/Code
 bool_directory=/home/avpetrov/BoolODE
