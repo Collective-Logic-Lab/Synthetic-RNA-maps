@@ -36,8 +36,11 @@ fi
 
 # Check if the gene network file is provided, default to 'cordicalArea.txt' if not
 if [ -z "$3" ]; then
-	gene_network='Body_Segmentation_In_Drosophila_2013/expressions.txt'
+	gene_network='cordicalArea.txt'
 fi
+
+#Testing Body Segmentation
+gene_network = 'Body_Segmentation_In_Drosophila_2013/expressions.txt'
 
 # Sets some of the directories going to be used.
 the_directory=/home/avpetrov/Synthetic-RNA-Maps/Code
