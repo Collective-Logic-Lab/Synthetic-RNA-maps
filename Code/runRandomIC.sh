@@ -36,7 +36,7 @@ fi
 
 # Check if the gene network file is provided, default to 'cordicalArea.txt' if not
 if [ -z "$3" ]; then
-	gene_network='cordicalArea.txt'
+	gene_network='testing.txt'
 fi
 
 
