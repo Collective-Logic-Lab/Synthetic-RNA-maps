@@ -15,3 +15,4 @@ CIA  ( ( CI_protein  ) AND NOT ( PTC_protein  ) )  OR ( hh_external AND ( ( ( CI
 EN_protein  ( en ) 
 SLP NOT ( ( hh ) )  
 WG_external NOT ( ( wg ) )
+hh_external NOT ( ( en ) )
