@@ -38,9 +38,10 @@ def vis(df, df_2, p, directory):
     ax.scatter(tsne[:,0], tsne[:,1], c = [float(col.split('_')[1]) for col in df.columns])
 
 
-    # 
+    # Axis names
     ax.set_xlabel("x axis")
     ax.set_ylabel("y axis")
+    
     # Save the plot as a PNG file
     ax.axis('on')
     plt.tight_layout()
@@ -60,7 +61,7 @@ def my_vis(df, df_2, directory):
     avg_2=[]
     nxt_avg_1=[]
     nxt_avg_2=[]
-
+    
     # Calculate averages of the two attractors (11000 and 00111)
     for column in df.columns:
         column_avg_1 = df[column].iloc[:2].mean()
@@ -89,6 +90,13 @@ def my_vis(df, df_2, directory):
     fig, ax = plt.subplots(1,1,figsize=(5,5))
     ax.scatter(avg_1, avg_2, c = [float(col.split('_')[1]) for col in df.columns])
 
+    # axis names
+    ax.set_xlabel("x axis")
+    ax.set_ylabel("y axis")
+    
+    # axis on
+    ax.axis('on')
+    
     for i in range(len(avg_1)):
         plt.arrow(x=avg_1[i], y=avg_2[i], dx=(nxt_avg_1[i] - avg_1[i]), dy=(nxt_avg_2[i] - avg_2[i]), alpha=0.5, width=.005)
     
