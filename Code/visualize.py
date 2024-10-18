@@ -38,7 +38,7 @@ def vis(df, df_2, p, directory):
     ax.scatter(tsne[:,0], tsne[:,1], c = [float(col.split('_')[1]) for col in df.columns])
 
     # Save the plot as a PNG file
-    ax.axis('off')
+    ax.axis('on')
     plt.tight_layout()
     plt.savefig(directory + '/CellAttractor.png')
 
