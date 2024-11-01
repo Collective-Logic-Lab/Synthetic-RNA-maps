@@ -82,7 +82,7 @@ jobs:
     model_initial_conditions: "rand_ICS.txt"
     simulation_time: 1
     num_cells: 1
-    do_parallel: True
+    do_parallel: False
     integration_step_size: 0.001
 
 post_processing:
