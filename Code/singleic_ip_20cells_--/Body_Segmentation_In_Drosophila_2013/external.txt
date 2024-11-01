@@ -1,3 +1,0 @@
-SLP
-hh_external
-WG_external
