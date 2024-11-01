@@ -1,2 +1,7 @@
 *.out
 *.err
+
+/output_*/**
+
+/singleic_ip_*/**
+/singleic_op_*/**
