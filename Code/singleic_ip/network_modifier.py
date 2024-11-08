@@ -51,8 +51,7 @@ def network_modifier(input_file):
 
                 # Check if '_' in gene name, and if so, combine them
                 gene_name = words[0]
-                if '_' in gene_name:
-                    gene_name = gene_name.replace('_', '')
+                gene_name = "".join(ch for ch in gene_name if ch.isalnum())
 
                 # Modify the line by removing '=' and replacing 'AND', 'OR', 'NOT'
                 modified_line = gene_name + '\t' + ' '.join(words[1:]).replace('=', '')
@@ -63,7 +62,13 @@ def network_modifier(input_file):
                     modified_line = modified_line.replace('OR', 'or')
                 if 'NOT' in modified_line:
                     modified_line = modified_line.replace('NOT', 'not')
+                if '_' in modified_line:
+                    modified_line = modified_line.replace('_', '')
+                if '-' in modified_line:
+                    modified_line = modified_line.replace('-', '')
 
+
+                #modified_line = "".join(ch for ch in modified_line if ch.isalnum())
                 modified_line = remove_space_after_tab(modified_line)
 
                 # Write the modified line to the new file
@@ -76,8 +81,7 @@ def network_modifier(input_file):
 
                     # Check if '_' in gene name, and if so, combine them
                     gene_name = words[0]
-                    if '_' in gene_name:
-                        gene_name = gene_name.replace('_', '')
+                    gene_name = "".join(ch for ch in gene_name if ch.isalnum())
 
                     # Create a new line by enclosing the gene name in parentheses
                     extra_gene = gene_name + '\t' + '( ' + gene_name + ' )'
@@ -90,8 +94,7 @@ def network_modifier(input_file):
 
                 # Check if '_' in gene name, and if so, combine them
                 gene_name = words[0]
-                if '_' in gene_name:
-                    gene_name = gene_name.replace('_', '')
+                gene_name = "".join(ch for ch in gene_name if ch.isalnum())
 
                 # Modify the line by removing '=' and replacing 'AND', 'OR', 'NOT'
                 modified_line = gene_name + '\t' + ' '.join(words[1:]).replace('=', '')
@@ -102,7 +105,17 @@ def network_modifier(input_file):
                     modified_line = modified_line.replace('OR', 'or')
                 if 'NOT' in modified_line:
                     modified_line = modified_line.replace('NOT', 'not')
+                if '_' in modified_line:
+                    modified_line = modified_line.replace('_', '')
+                if '-' in modified_line:
+                    modified_line = modified_line.replace('-', '')
+
+
+
+                #modified_line = "".join(ch for ch in modified_line if (ch.isalnum() or ch == " " or ch == ")" or ch == "("))
+                #modified_line = "".join(ch for ch in modified_line if ch.isalnum())
                 modified_line = remove_space_after_tab(modified_line)
+
 
                 # Write the modified line to the new file
                 f.write(modified_line + '\n')
@@ -113,8 +126,7 @@ def network_modifier(input_file):
 
                     # Check if '_' in gene name, and if so, combine them
                     gene_name = words[0]
-                    if '_' in gene_name:
-                        gene_name = gene_name.replace('_', '')
+                    gene_name = "".join(ch for ch in gene_name if ch.isalnum())
 
                     # Create a new line by enclosing the gene name in parentheses
                     extra_gene = gene_name + '\t' + '( ' + gene_name + ' )'
