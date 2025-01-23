@@ -1,6 +1,6 @@
 runRandomIC.sh
 
-This shell script combines many Python programs to execute a selection of tasks ranging from gene network processing to cell movement visualization.
+This shell script combines many Python programs to execute a selection of tasks ranging from gene network processing to cell movement visualization.  The script runs simulations, using BoolODE to simulate single-cell RNA sequencing data.  The simulation is started from many random initial conditions, and simulated data are output as CSV files.
 
 Linked Python Scripts:
 
@@ -22,7 +22,7 @@ To run the shell script, open a terminal and navigate to the directory containin
 Dependencies:
 
 Python 3.x
-BoolODE library (https://github.com/boolcode/BoolODE)
+BoolODE library (https://murali-group.github.io/Beeline/BoolODE.html)
 
 Notes:
 
