@@ -42,7 +42,7 @@ fi
 
 
 # Sets some of the directories going to be used.
-the_directory=~/Synthetic-RNA-Maps/Code
+the_directory=~/Synthetic-RNA-maps/Code
 bool_directory=~/BoolODE
 
 # Create output directory based on the number of simulations and test name
