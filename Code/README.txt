@@ -22,7 +22,7 @@ To run the shell script, open a terminal and navigate to the directory containin
 Dependencies:
 
 Python 3.x
-BoolODE library (https://murali-group.github.io/Beeline/BoolODE.html)
+BoolODE library (originally from https://murali-group.github.io/Beeline/BoolODE.html; forked version here: https://github.com/Collective-Logic-Lab/BoolODE)
 
 Notes:
 
