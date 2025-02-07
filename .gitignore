@@ -2,3 +2,10 @@
 Code/Results/
 
 .DS_Store
+.virtual_documents
+
+*.csv
+*.pkl
+*.txt
+
+
